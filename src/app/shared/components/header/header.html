@@ -1,0 +1,44 @@
+<header
+    class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/70 dark:bg-black/70 border-b border-gray-100 dark:border-zinc-800 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0 cursor-pointer" routerLink="/">
+                <span
+                    class="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600 tracking-tight">
+                    Tribus
+                </span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex gap-6">
+                <a routerLink="/" routerLinkActive="text-primary-600 font-semibold"
+                    [routerLinkActiveOptions]="{exact: true}"
+                    class="text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">Explore</a>
+                <a routerLink="/search"
+                    class="text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">Find Events</a>
+            </nav>
+
+            <!-- Auth Action -->
+            <div class="flex items-center gap-3">
+                <ng-container *ngIf="auth.isAuthenticated(); else loginBtn">
+                    <div class="flex items-center gap-3">
+                        <span class="hidden md:block text-sm font-medium text-gray-700 dark:text-gray-200">
+                            {{ auth.currentUser()?.name }}
+                        </span>
+                        <p-avatar [image]="auth.currentUser()?.avatar" shape="circle"
+                            styleClass="cursor-pointer border-2 border-primary-100 hover:border-primary-400 transition-colors"
+                            (click)="menu.toggle($event)">
+                        </p-avatar>
+                        <p-menu #menu [model]="menuItems" [popup]="true" appendTo="body"></p-menu>
+                    </div>
+                </ng-container>
+                <ng-template #loginBtn>
+                    <a routerLink="/login" class="text-sm font-semibold text-gray-600 hover:text-primary-600 px-3">Log
+                        in</a>
+                    <p-button label="Sign up" [rounded]="true" size="small"></p-button>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</header>
