@@ -25,10 +25,11 @@ export class EventDetailComponent {
 
   getSeverity(category: string): any {
     switch (category) {
-      case 'Technology': return 'info';
-      case 'Design': return 'danger';
-      case 'Business': return 'success';
+      case 'Tecnología': return 'info';
+      case 'Diseño': return 'danger';
+      case 'Negocios': return 'success';
       case 'Social': return 'warning';
+      case 'Cultura': return 'help';
       default: return 'secondary';
     }
   }

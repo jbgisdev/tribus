@@ -30,7 +30,7 @@
                         <i class="pi pi-map-marker text-xl"></i>
                     </div>
                     <div>
-                        <div class="text-xs text-gray-500 uppercase font-bold">Location</div>
+                        <div class="text-xs text-gray-500 uppercase font-bold">Ubicación</div>
                         <div class="text-gray-900 dark:text-white font-medium">{{ event.location }}</div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                 <div class="flex items-center gap-3">
                     <p-avatar [image]="event.organizer.avatar" size="large" shape="circle"></p-avatar>
                     <div>
-                        <div class="text-xs text-gray-500 uppercase font-bold">Hosted By</div>
+                        <div class="text-xs text-gray-500 uppercase font-bold">Organizado Por</div>
                         <div class="text-gray-900 dark:text-white font-medium">{{ event.organizer.name }}</div>
                     </div>
                 </div>
@@ -47,13 +47,13 @@
             <p-divider></p-divider>
 
             <div class="prose dark:prose-invert max-w-none mb-8">
-                <h3 class="text-xl font-bold mb-4">Details</h3>
+                <h3 class="text-xl font-bold mb-4">Detalles</h3>
                 <p class="text-lg text-gray-600 dark:text-gray-300">{{ event.description }}</p>
             </div>
 
             <!-- Attendees Mock -->
             <div class="mb-4">
-                <h3 class="text-lg font-bold mb-4">Attendees (24)</h3>
+                <h3 class="text-lg font-bold mb-4">Asistentes (24)</h3>
                 <div class="flex -space-x-2">
                     <p-avatar label="JD" shape="circle" size="normal"
                         styleClass="bg-blue-100 text-blue-600 border-2 border-white"></p-avatar>
@@ -67,6 +67,22 @@
                 </div>
             </div>
 
+            <!-- Map Section -->
+            <div class="mt-8">
+                <h3 class="text-lg font-bold mb-4">Ubicación del Evento</h3>
+                <div class="rounded-xl overflow-hidden border border-gray-200 dark:border-zinc-800">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.3285!2d-74.7813!3d10.9878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDU5JzE2LjEiTiA3NMKwNDYnNTIuNyJX!5e0!3m2!1ses!2sco!4v1234567890"
+                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" class="w-full">
+                    </iframe>
+                </div>
+                <p class="text-sm text-gray-500 mt-2">
+                    <i class="pi pi-map-marker mr-1"></i>
+                    Vía 40 con Calle 84, Barranquilla, Atlántico
+                </p>
+            </div>
+
         </div>
     </div>
 
@@ -74,9 +90,9 @@
     <div
         class="fixed bottom-0 left-0 right-0 p-4 bg-white dark:bg-zinc-900 border-t border-gray-100 dark:border-zinc-800 flex items-center justify-between md:hidden z-40">
         <div>
-            <div class="text-xs text-gray-500">Price</div>
-            <div class="font-bold text-lg">{{ event.price === 0 ? 'Free' : (event.price | currency) }}</div>
+            <div class="text-xs text-gray-500">Precio</div>
+            <div class="font-bold text-lg">{{ event.price === 0 ? 'Gratis' : (event.price | currency) }}</div>
         </div>
-        <p-button label="Attend Event" icon="pi pi-check" [rounded]="true"></p-button>
+        <p-button label="Asistir" icon="pi pi-check" [rounded]="true"></p-button>
     </div>
 </div>

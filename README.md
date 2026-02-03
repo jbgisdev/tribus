@@ -1,59 +1,128 @@
-# MeetupClone
+# Tribus
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+Una aplicación web moderna para conectar personas con intereses similares a través de eventos y comunidades. Inspirada en Meetup, construida con Angular 19+, PrimeNG y Tailwind CSS.
 
-## Development server
+![Tribus](public/images/login-hero.png)
 
-To start a local development server, run:
+## 🚀 Características
 
-```bash
-ng serve
-```
+- **Exploración de Eventos**: Navega por eventos culturales, tecnológicos, de negocios y más
+- **Detalles Completos**: Visualiza información detallada de cada evento con mapas integrados
+- **Autenticación**: Sistema de login con soporte para Google (simulado)
+- **Diseño Responsivo**: Optimizado para móviles, tablets y escritorio
+- **Interfaz Premium**: Diseño moderno con animaciones suaves y efectos visuales
+- **Localización**: Completamente en español
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛠️ Stack Tecnológico
 
-## Code scaffolding
+- **Framework**: Angular 19+ (Standalone Components, Signals)
+- **UI Components**: PrimeNG 21+ (Aura Theme)
+- **Estilos**: Tailwind CSS 3
+- **Iconos**: PrimeIcons
+- **Tipografía**: Inter (Google Fonts)
+- **Validación**: Reactive Forms con validadores integrados
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## 📦 Instalación
 
 ```bash
-ng build
+# Clonar el repositorio
+git clone <repository-url>
+cd Tribus
+
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+La aplicación estará disponible en `http://localhost:4200/`
 
-## Running unit tests
+## 🏗️ Estructura del Proyecto
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+```
+src/
+├── app/
+│   ├── core/                 # Servicios y modelos centrales
+│   │   ├── guards/          # Guards de autenticación
+│   │   ├── models/          # Interfaces TypeScript
+│   │   └── services/        # AuthService, EventService
+│   ├── features/            # Módulos de características
+│   │   ├── auth/           # Login y autenticación
+│   │   ├── event-detail/   # Página de detalle de evento
+│   │   ├── home/           # Página principal
+│   │   └── profile/        # Perfil de usuario (protegido)
+│   └── shared/             # Componentes compartidos
+│       └── components/     # Header, Footer, EventCard
+├── public/                 # Recursos estáticos
+│   └── images/            # Imágenes de la aplicación
+└── styles.css             # Estilos globales
+```
+
+## 🎨 Características de Diseño
+
+- **Mobile-First**: Diseño optimizado primero para dispositivos móviles
+- **Tema Oscuro**: Soporte completo para modo oscuro
+- **Animaciones**: Transiciones suaves y micro-interacciones
+- **Accesibilidad**: Contraste optimizado y navegación por teclado
+- **Glassmorphism**: Efectos modernos de vidrio esmerilado
+
+## 🔒 Autenticación
+
+El sistema de autenticación actual es una simulación (mock) que utiliza localStorage:
+
+- **Login con Email**: Validación de formato de correo electrónico
+- **Login con Google**: Simulación de OAuth
+- **Usuario Demo**: Acceso rápido con credenciales predefinidas
+- **Rutas Protegidas**: Guard que protege el perfil de usuario
+
+## 🗺️ Eventos Destacados
+
+La aplicación incluye eventos de ejemplo en varias categorías:
+
+- **Tecnología**: Charlas técnicas, workshops
+- **Cultura**: Carnaval de Barranquilla 2026
+- **Diseño**: Meetups de diseño UX/UI
+- **Negocios**: Networking y emprendimiento
+- **Social**: Eventos comunitarios
+
+## 📱 Comandos Disponibles
 
 ```bash
-ng test
+# Desarrollo
+npm start              # Inicia servidor de desarrollo
+npm run build          # Compila para producción
+npm test               # Ejecuta tests con Vitest
+
+# Linting
+npm run lint           # Verifica código con ESLint
 ```
 
-## Running end-to-end tests
+## 🌐 Navegación
 
-For end-to-end (e2e) testing, run:
+- `/` - Página principal con listado de eventos
+- `/event/:id` - Detalle de evento específico
+- `/login` - Página de inicio de sesión
+- `/profile` - Perfil de usuario (requiere autenticación)
 
-```bash
-ng e2e
-```
+## 🤝 Contribuir
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Las contribuciones son bienvenidas. Por favor:
 
-## Additional Resources
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios usando Conventional Commits (`git commit -m 'feat: Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📄 Licencia
+
+Este proyecto es de código abierto y está disponible bajo la licencia MIT.
+
+## 👥 Autor
+
+Desarrollado con ❤️ para conectar comunidades.
+
+---
+
+**Nota**: Esta es una aplicación de demostración. Los datos de eventos y usuarios son simulados.

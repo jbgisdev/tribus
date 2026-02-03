@@ -11,7 +11,7 @@ export interface Attendee {
     avatar?: string;
 }
 
-export interface MeetupEvent {
+export interface TribusEvent {
     id: string;
     title: string;
     description: string;
@@ -21,5 +21,5 @@ export interface MeetupEvent {
     price: number;
     organizer: User;
     attendees: Attendee[];
-    category: 'Technology' | 'Design' | 'Business' | 'Social';
+    category: 'Tecnología' | 'Diseño' | 'Negocios' | 'Social' | 'Cultura';
 }

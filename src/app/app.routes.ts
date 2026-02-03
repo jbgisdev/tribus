@@ -9,7 +9,7 @@ export const routes: Routes = [
     {
         path: '',
         component: HomeComponent,
-        title: 'Meetup Clone - Home'
+        title: 'Tribus - Home'
     },
     {
         path: 'event/:id',

@@ -11,5 +11,5 @@ import { Footer } from './shared/components/footer/footer';
   styleUrl: './app.css'
 })
 export class AppComponent {
-  title = 'meetup-clone';
+  title = 'tribus';
 }

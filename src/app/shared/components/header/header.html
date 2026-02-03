@@ -14,9 +14,9 @@
             <nav class="hidden md:flex gap-6">
                 <a routerLink="/" routerLinkActive="text-primary-600 font-semibold"
                     [routerLinkActiveOptions]="{exact: true}"
-                    class="text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">Explore</a>
+                    class="text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">Explorar</a>
                 <a routerLink="/search"
-                    class="text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">Find Events</a>
+                    class="text-gray-600 dark:text-gray-300 hover:text-primary-500 transition-colors">Buscar Eventos</a>
             </nav>
 
             <!-- Auth Action -->
@@ -34,9 +34,9 @@
                     </div>
                 </ng-container>
                 <ng-template #loginBtn>
-                    <a routerLink="/login" class="text-sm font-semibold text-gray-600 hover:text-primary-600 px-3">Log
-                        in</a>
-                    <p-button label="Sign up" [rounded]="true" size="small"></p-button>
+                    <a routerLink="/login"
+                        class="text-sm font-semibold text-gray-600 hover:text-primary-600 px-3">Iniciar Sesión</a>
+                    <p-button label="Registrarse" [rounded]="true" size="small"></p-button>
                 </ng-template>
             </div>
         </div>

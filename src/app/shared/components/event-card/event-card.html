@@ -1,26 +1,30 @@
-<div class="group h-full bg-white dark:bg-zinc-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-zinc-800 flex flex-col cursor-pointer transform hover:-translate-y-1">
-    
+<div [routerLink]="['/event', event.id]"
+    class="group h-full bg-white dark:bg-zinc-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-zinc-800 flex flex-col cursor-pointer transform hover:-translate-y-1">
+
     <!-- Image Section -->
     <div class="relative h-48 overflow-hidden">
-        <img [src]="event.imageUrl" [alt]="event.title" 
-             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-        
+        <img [src]="event.imageUrl" [alt]="event.title" (error)="onImageError($event)"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+
         <div class="absolute top-3 left-3">
             <p-tag [value]="event.category" [severity]="getCategoryColor(event.category)"></p-tag>
         </div>
 
-        <div class="absolute top-3 right-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm text-center">
-            <div class="text-xs uppercase font-bold text-gray-500 dark:text-gray-400">{{ event.date | date:'MMM' }}</div>
+        <div
+            class="absolute top-3 right-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm text-center">
+            <div class="text-xs uppercase font-bold text-gray-500 dark:text-gray-400">{{ event.date | date:'MMM' }}
+            </div>
             <div class="text-lg font-bold text-gray-900 dark:text-white leading-none">{{ event.date | date:'dd' }}</div>
         </div>
     </div>
 
     <!-- Content -->
     <div class="p-5 flex-1 flex flex-col">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 line-clamp-2 leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+        <h3
+            class="text-xl font-bold text-gray-900 dark:text-white mb-2 line-clamp-2 leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
             {{ event.title }}
         </h3>
-        
+
         <div class="flex items-center text-gray-500 dark:text-gray-400 text-sm mb-4">
             <i class="pi pi-map-marker mr-2 text-primary-500"></i>
             <span class="truncate">{{ event.location }}</span>
@@ -31,16 +35,14 @@
         </p>
 
         <!-- Footer -->
-        <div class="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-zinc-800 mt-auto">
-            <div class="flex items-center gap-2">
-                <p-avatar [image]="event.organizer.avatar" shape="circle" size="normal" class="border border-gray-200 dark:border-zinc-700"></p-avatar>
-                <div class="flex flex-col">
-                    <span class="text-xs text-gray-500">Hosted by</span>
-                    <span class="text-sm font-semibold text-gray-800 dark:text-gray-200 truncate max-w-[100px]">{{ event.organizer.name }}</span>
-                </div>
+        <div class="flex items-center gap-2 pt-4 border-t border-gray-100 dark:border-zinc-800 mt-auto">
+            <p-avatar [image]="event.organizer.avatar" shape="circle" size="normal"
+                class="border border-gray-200 dark:border-zinc-700"></p-avatar>
+            <div class="flex flex-col">
+                <span class="text-xs text-gray-500">Organizado por</span>
+                <span class="text-sm font-semibold text-gray-800 dark:text-gray-200 truncate max-w-[100px]">{{
+                    event.organizer.name }}</span>
             </div>
-            
-            <p-button label="Details" [routerLink]="['/event', event.id]" [rounded]="true" size="small" variant="outlined"></p-button>
         </div>
     </div>
 </div>

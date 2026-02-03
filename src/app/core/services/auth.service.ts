@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
     providedIn: 'root'
 })
 export class AuthService {
-    private readonly TOKEN_KEY = 'meetup_token';
+    private readonly TOKEN_KEY = 'tribus_token';
 
     // Signal to track authentication state
     readonly isAuthenticated: WritableSignal<boolean> = signal(this.hasToken());
@@ -15,7 +15,7 @@ export class AuthService {
 
     constructor(private router: Router) {
         if (this.isAuthenticated()) {
-            this.currentUser.set({ name: 'Demo User', email: 'demo@meetup.com', avatar: 'https://i.pravatar.cc/300' });
+            this.currentUser.set({ name: 'Demo User', email: 'demo@tribus.com', avatar: 'https://i.pravatar.cc/300' });
         }
     }
 

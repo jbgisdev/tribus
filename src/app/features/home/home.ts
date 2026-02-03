@@ -15,5 +15,5 @@ export class HomeComponent {
   private eventService = inject(EventService);
   events$ = this.eventService.getEvents();
 
-  categories = ['Technology', 'Design', 'Business', 'Social', 'Music', 'Sports'];
+  categories = ['Tecnología', 'Diseño', 'Negocios', 'Social', 'Cultura', 'Música', 'Deportes'];
 }

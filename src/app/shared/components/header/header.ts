@@ -17,8 +17,8 @@ import { MenuItem } from 'primeng/api';
 export class Header {
   auth = inject(AuthService);
   menuItems: MenuItem[] = [
-    { label: 'Profile', icon: 'pi pi-user', routerLink: '/profile' },
+    { label: 'Perfil', icon: 'pi pi-user', routerLink: '/profile' },
     { separator: true },
-    { label: 'Logout', icon: 'pi pi-sign-out', command: () => this.auth.logout() }
+    { label: 'Cerrar Sesión', icon: 'pi pi-sign-out', command: () => this.auth.logout() }
   ];
 }
