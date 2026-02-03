@@ -121,7 +121,7 @@ Este proyecto es de código abierto y está disponible bajo la licencia MIT.
 
 ## 👥 Autor
 
-Desarrollado con ❤️ para conectar comunidades.
+Desarrollado por Jaime Buelvas como Prueba Técnica para D2D.
 
 ---
 
