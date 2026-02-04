@@ -26,7 +26,7 @@ Una aplicación web moderna para conectar personas con intereses similares a tra
 
 ```bash
 # Clonar el repositorio
-git clone <repository-url>
+git clone https://github.com/jbgisdev/tribus.git
 cd Tribus
 
 # Instalar dependencias
